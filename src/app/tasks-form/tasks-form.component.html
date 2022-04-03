@@ -1,3 +1,25 @@
-<form [formGroup]="form">
-    <input type="text" formControlName="title" placeholder="Digite o Título da sua Task">
-</form>
+<mat-card>
+    <h1>Área para Cadastro e Edição de Tasks</h1>
+    <form [formGroup]="form">
+        <mat-form-field appearance="fill">
+            <mat-label>Título</mat-label>
+            <input formControlName="title" matInput>
+            <mat-error *ngIf="!form.value.title">Este campo deve ser preenchido corretamente</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Prioridade</mat-label>
+            <mat-select formControlName="priority">
+                <mat-option value="Alta">Alta</mat-option>
+                <mat-option value="Média">Média</mat-option>
+                <mat-option value="Baixa">Baixa</mat-option>
+            </mat-select>
+            <mat-error *ngIf="!form.value.priority">Este campo deve ser preenchido</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <textarea formControlName="description" matInput></textarea>
+            <mat-error *ngIf="!form.value.description">Este campo deve ser preenchido corretamente</mat-error>
+        </mat-form-field>
+        <button (click)="saveTask(form.value)">Save Task</button>
+    </form>
+</mat-card>

@@ -1,5 +1,7 @@
+import { Tasks } from './interfaces/tasks';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tasks-form',
@@ -10,16 +12,21 @@ export class TasksFormComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor() {
+  constructor(public router: Router) {
     this.form = new FormGroup({
-      title: new FormControl(),
-      priority: new FormControl(),
-      description: new FormControl()
+      title: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      priority: new FormControl(null, [Validators.required]),
+      description: new FormControl(null, [Validators.required, Validators.minLength(3)])
     })
   }
 
   ngOnInit(): void {
     console.log(this.form)
+    this.form.markAllAsTouched()
+  }
+
+  saveTask(task: Tasks) {
+    console.log(task)
   }
 
 }
