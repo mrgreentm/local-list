@@ -1,5 +1,5 @@
-export class Tasks {
-  title!: string;
-  description!: string;
-  priority!: string;
+export interface Tasks {
+  title: string;
+  description: string;
+  priority: string;
 }
