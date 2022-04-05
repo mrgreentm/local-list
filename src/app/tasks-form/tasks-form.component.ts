@@ -34,14 +34,13 @@ export class TasksFormComponent implements OnInit {
   }
 
   saveTask(task: Tasks) {
-    if (this.taskId) {
+    if (this.taskId && this.form.valid) {
       this.tasksService.update(task, this.taskId).subscribe()
       this.router.navigate(['all-tasks']);
-    } else {
+    } else if (this.form.valid) {
       this.tasksService.createTask(task).subscribe()
       this.router.navigate(['all-tasks']);
     }
-
   }
 
 
