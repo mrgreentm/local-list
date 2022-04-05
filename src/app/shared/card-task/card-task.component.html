@@ -1,7 +1,7 @@
 <mat-card *ngFor="let task of dataSource" class="example-card">
     <div class="icons">
         <mat-icon (click)="editTask(task.id)" class="mat-18">edit</mat-icon>
-        <mat-icon (click)="delete(task.id)" class="mat-18">close</mat-icon>
+        <mat-icon (click)="openDialog(task.id)" class="mat-18">close</mat-icon>
     </div>
     <mat-card-title-group>
         <mat-card-title>{{task.title}}</mat-card-title>

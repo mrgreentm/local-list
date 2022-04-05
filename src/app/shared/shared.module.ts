@@ -56,6 +56,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { ModalComponent } from './modal/modal.component';
 
 
 const AllMaterialModules = [
@@ -99,7 +100,7 @@ const AllMaterialModules = [
 
 @NgModule({
   imports: [AllMaterialModules, TasksFormModule, CommonModule, BrowserModule],
-  declarations: [CardTaskComponent],
+  declarations: [CardTaskComponent, ModalComponent],
   exports: [AllMaterialModules, CardTaskComponent],
 })
 export class SharedModule { }

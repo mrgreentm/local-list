@@ -3,7 +3,8 @@
     <div class="tasks-container">
         <app-card-task [dataSource]="allTasks"></app-card-task>
     </div>
-    <div *ngIf="!allTasks.length">
+    <div class="sorry-message" *ngIf="!allTasks.length">
         <h1>Ainda não há registro de tasks!</h1>
+        <mat-icon>sentiment_very_dissatisfied</mat-icon>
     </div>
 </div>

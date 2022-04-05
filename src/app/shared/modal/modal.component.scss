@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #615dfb;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+button {
+    border: none;
+    border-radius: 40px;
+    height: 2rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+button:hover {
+    height: 2.2rem;
+    transition: all 0.5s;
+}

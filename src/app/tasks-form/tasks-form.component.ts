@@ -41,6 +41,7 @@ export class TasksFormComponent implements OnInit {
       this.tasksService.createTask(task).subscribe()
       this.router.navigate(['all-tasks']);
     }
+
   }
 
 

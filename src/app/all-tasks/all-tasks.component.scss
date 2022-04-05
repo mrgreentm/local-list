@@ -18,3 +18,15 @@ app-card-task {
     gap: 2rem;
     flex-wrap: wrap;
 }
+
+.sorry-message {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    mat-icon {
+        font-size: 4rem;
+        width: auto;
+        color: #fff;
+    }
+}

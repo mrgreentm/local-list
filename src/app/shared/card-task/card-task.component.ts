@@ -1,6 +1,8 @@
+import { ModalComponent } from './../modal/modal.component';
 import { TasksService } from './../../services/tasks.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-card-task',
@@ -9,15 +11,18 @@ import { Router } from '@angular/router';
 })
 export class CardTaskComponent implements OnInit {
   @Input() dataSource: any;
-  constructor(private router: Router, private tasksService: TasksService) { }
+  constructor(private router: Router, private tasksService: TasksService, public dialog: MatDialog) { }
 
   ngOnInit() {
   }
   editTask(id: number): void {
     this.router.navigate([`/edit/${id}`]);
   }
-  delete(id: number): void {
-    this.tasksService.delete(id).subscribe()
-    window.location.reload()
+  openDialog(id: number) {
+    this.dialog.open(ModalComponent, {
+      data: {
+        id: id,
+      },
+    });
   }
 }
