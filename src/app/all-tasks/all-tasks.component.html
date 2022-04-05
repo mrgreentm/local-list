@@ -1,6 +1,9 @@
 <div class="container">
-    <h1>Todas as Tasks</h1>
+    <h1 *ngIf="allTasks.length">Todas as Tasks</h1>
     <div class="tasks-container">
         <app-card-task [dataSource]="allTasks"></app-card-task>
+    </div>
+    <div *ngIf="!allTasks.length">
+        <h1>Ainda não há registro de tasks!</h1>
     </div>
 </div>
