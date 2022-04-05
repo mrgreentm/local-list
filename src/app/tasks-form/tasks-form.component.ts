@@ -37,10 +37,10 @@ export class TasksFormComponent implements OnInit {
     if (this.taskId) {
       this.tasksService.update(task, this.taskId).subscribe()
       this.router.navigate(['all-tasks']);
+    } else {
+      this.tasksService.createTask(task).subscribe()
+      this.router.navigate(['all-tasks']);
     }
-    this.tasksService.createTask(task).subscribe()
-    this.router.navigate(['all-tasks']);
-
   }
 
 
