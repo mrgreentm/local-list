@@ -16,5 +16,14 @@ export class TasksService {
   createTask(task: Tasks): Observable<any> {
     return this.httpClient.post(this.urlApi, task)
   }
+  update(task: any, taskId: number): Observable<any> {
+    return this.httpClient.put(`${this.urlApi}/${taskId}`, task)
+  }
+  findOne(id: number): Observable<any> {
+    return this.httpClient.get(`${this.urlApi}/${id}`)
+  }
+  delete(id:number):Observable<any> {
+    return this.httpClient.delete(`${this.urlApi}/${id}`)
 
+  }
 }

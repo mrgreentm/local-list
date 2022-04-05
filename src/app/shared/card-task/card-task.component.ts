@@ -1,3 +1,4 @@
+import { TasksService } from './../../services/tasks.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,11 +9,15 @@ import { Router } from '@angular/router';
 })
 export class CardTaskComponent implements OnInit {
   @Input() dataSource: any;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private tasksService: TasksService) { }
 
   ngOnInit() {
   }
   editTask(id: number): void {
     this.router.navigate([`/edit/${id}`]);
+  }
+  delete(id: number): void {
+    this.tasksService.delete(id).subscribe()
+    window.location.reload()
   }
 }

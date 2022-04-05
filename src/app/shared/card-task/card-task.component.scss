@@ -1,5 +1,5 @@
 .example-card {
-    max-width: 400px;
+    max-width: 300px;
     margin-bottom: 8px;
     background-color: #615dfb;
     color: #fff;
@@ -12,4 +12,11 @@ mat-icon:hover {
 
 img {
     border-radius: 100%;
+}
+
+.icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
