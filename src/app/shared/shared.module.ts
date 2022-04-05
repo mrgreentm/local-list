@@ -1,3 +1,5 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { TasksFormModule } from './../tasks-form/tasks-form.module';
 import { CardTaskComponent } from './card-task/card-task.component';
 // IMPORT ALL MATERIAL COMPONENTS
@@ -96,7 +98,7 @@ const AllMaterialModules = [
 ];
 
 @NgModule({
-  imports: [AllMaterialModules, TasksFormModule],
+  imports: [AllMaterialModules, TasksFormModule, CommonModule, BrowserModule],
   declarations: [CardTaskComponent],
   exports: [AllMaterialModules, CardTaskComponent],
 })

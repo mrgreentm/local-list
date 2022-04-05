@@ -1,11 +1,11 @@
-<mat-card class="example-card">
-    <mat-icon (click)="editTask(1)" class="mat-18">edit</mat-icon>
+<mat-card *ngFor="let task of dataSource" class="example-card">
+    <mat-icon (click)="editTask(task.id)" class="mat-18">edit</mat-icon>
     <mat-card-title-group>
-        <mat-card-title>to study english</mat-card-title>
-        <mat-card-subtitle>Medium</mat-card-subtitle>
+        <mat-card-title>{{task.title}}</mat-card-title>
+        <mat-card-subtitle>{{task.priority}}</mat-card-subtitle>
         <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba1.jpg">
     </mat-card-title-group>
     <mat-card-content>
-        first Task
+        {{task.description}}
     </mat-card-content>
 </mat-card>

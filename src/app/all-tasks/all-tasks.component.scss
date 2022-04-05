@@ -11,3 +11,10 @@ h1 {
     flex-wrap: wrap;
     gap: 2%;
 }
+
+app-card-task {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}

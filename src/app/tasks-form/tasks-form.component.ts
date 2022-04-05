@@ -1,3 +1,4 @@
+import { TasksService } from './../services/tasks.service';
 import { Tasks } from './interfaces/tasks';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class TasksFormComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(public router: Router) {
+  constructor(public router: Router, private tasksService: TasksService) {
     this.form = new FormGroup({
       title: new FormControl(null, [Validators.required, Validators.minLength(3)]),
       priority: new FormControl(null, [Validators.required]),
@@ -26,7 +27,7 @@ export class TasksFormComponent implements OnInit {
   }
 
   saveTask(task: Tasks) {
-    console.log(task)
+    this.tasksService.createTask(task).subscribe()
   }
 
 }
