@@ -3,6 +3,7 @@ import { Tasks } from './interfaces/tasks';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { pipe, timeout } from 'rxjs';
 
 @Component({
   selector: 'app-tasks-form',
@@ -36,10 +37,10 @@ export class TasksFormComponent implements OnInit {
   saveTask(task: Tasks) {
     if (this.taskId && this.form.valid) {
       this.tasksService.update(task, this.taskId).subscribe()
-      this.router.navigate(['all-tasks']);
+      this.router.navigate(['all-tasks']).then(() => window.location.reload())
     } else if (this.form.valid) {
       this.tasksService.createTask(task).subscribe()
-      this.router.navigate(['all-tasks']);
+      this.router.navigate(['all-tasks']).then(() => window.location.reload())
     }
   }
 
