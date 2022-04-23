@@ -19,7 +19,8 @@ export class TasksFormComponent implements OnInit {
     this.form = new FormGroup({
       title: new FormControl(null, [Validators.required, Validators.minLength(3)]),
       priority: new FormControl(null, [Validators.required]),
-      description: new FormControl(null, [Validators.required, Validators.minLength(3)])
+      description: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      userId: new FormControl(1)
     })
     this.route.params.subscribe(params => this.taskId = params['id']);
 
